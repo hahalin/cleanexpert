@@ -1,0 +1,11 @@
+{
+  "name": "CleanExpert",
+  "version": "2.2.2+20170101.1",
+  "description": "",
+  "dependencies": {
+    "onsenui": "^2.0.0-rc.5",
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "react-onsenui": "*"
+  }
+}
