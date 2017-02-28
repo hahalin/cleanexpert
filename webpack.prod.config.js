@@ -113,8 +113,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/public/index.html.ejs',
       chunksSortMode: 'dependency',
-      externalCSS: ['components/loader.css'],
-      externalJS: ['components/loader.js'],
+      externalCSS: ['components/loader.css','css/map.css','css/button.css','css/font-awesome-4.7.0/css/font-awesome.min.css'],
+      externalJS: ['cordova.js','components/loader.js'],
       minify: {
         caseSensitive: true,
         collapseWhitespace: true,

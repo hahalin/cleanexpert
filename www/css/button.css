@@ -1,0 +1,52 @@
+
+.bigbutton {
+
+  background-color:rgb(0, 102, 255,0.4);
+  height: 90px;
+  width: 120px;     
+  line-height:90px;
+  float:left;
+}
+
+.bigbutton:hover {
+
+  /*background-color:rgb(255,255,255,0.5);*/
+  background-color:rgb(0,0,0,0.8);
+  height: 90px;
+  width: 120px;     
+  line-height:90px;
+}
+
+
+.bigbutton1{
+  background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+  background-image: linear-gradient(top, #f4f1ee, #fff);
+  border-radius: 30%;
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
+  
+  float:left;
+  position: relative;
+
+  height: 90px;
+  width: 120px;     
+  line-height:90px;
+  
+  margin: 0 30px 30px 0;
+  
+  -webkit-transition: all .1s linear;
+
+  transition: all .1s linear;
+  text-decoration:none;
+  opacity:1;
+
+  text-align:center;
+  font-size:18px;
+  color:#333333;
+}
+
+.bigbuttona:hover{
+  background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
+  background-image: l*/inear-gradient(top, #fff, #f4f1ee);
+  color:#0088cc;
+  backround-color:rgb(0,0,0,0.3);
+}

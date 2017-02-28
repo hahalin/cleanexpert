@@ -1,0 +1,3 @@
+﻿
+
+http://stackoverflow.com/questions/30048429/cordova-does-not-actually-install-app-on-android-device
