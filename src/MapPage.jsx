@@ -19,6 +19,7 @@ export default class MapPage extends React.Component {
       this.state={
       	isModalOpen:false
       } 
+      this.addMarker=this.addMarker.bind(this);
   	}	
 
 	renderToolbar() {
@@ -95,7 +96,7 @@ export default class MapPage extends React.Component {
 	addMarker(){
 
 		var latitudeAndLongitudeOne = EIFFEL_TOWER_POSITION;  //new google.maps.LatLng('24.956969','121.1648806');
-        var contentString = "<html><body><div><p><h3><a class='doremi' href='#'>aaa</a>"+"test name"+"</h3></p></div></body></html>";
+        var contentString = "<html><body><div><p><h4><a class='doremi' href='#'>"+"專案名稱"+"</a></h4></p></div></body></html>";
 
 		var markerOne = new google.maps.Marker({
 			position: {lat:24.957034,lng:121.163355},
@@ -108,6 +109,8 @@ export default class MapPage extends React.Component {
 		const _this=this;
 		markerOne.addListener('click',function(){
 			//ons.notification.alert('Hello world!');
+					debugger;
+
 		    _this.props.navigator.pushPage({component: InfoPage});
 
 		});

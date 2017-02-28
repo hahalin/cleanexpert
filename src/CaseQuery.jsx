@@ -74,7 +74,7 @@ export default class CaseQuery extends React.Component {
         tab: <Tab label='表格清單' icon='fa-table' changeTab={()=>this.changeTab.bind(this)} />
       },
       {
-        content: <MapPage title='地圖清單' />,
+        content: <MapPage title='地圖清單' navigator={this.props.navigator} />,
         tab: <Tab label='地圖清單' icon='ion-earth' changeTab={this.changeTab.bind(this)} />
       }
     ]
