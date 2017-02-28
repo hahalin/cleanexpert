@@ -120,7 +120,6 @@ export default class MapPage extends React.Component {
         marker2['infowindow'] = contentString;
 
         google.maps.event.addListener(marker2, 'click', function() {
-        	alert(this.tid);
         	if (!_this.infowindow)
         	{
 				_this.infowindow = new google.maps.InfoWindow({});
@@ -265,8 +264,7 @@ export default class MapPage extends React.Component {
 	    		>
 	    		</section>
 		        <p style={{textAlign: 'center'}}>
-		          <Button onClick={()=>{this.animateMap();}}>查看111222</Button>
-		          <Button onClick={this.popPage.bind(this)}>查看2</Button>
+		          <Button onClick={()=>{this.animateMap();}}>列出地點</Button>
 		        </p>
 		        <div id="map" ref="map" style={mapStyle}></div>
 	      	</Page>
