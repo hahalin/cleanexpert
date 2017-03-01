@@ -38,6 +38,7 @@ export default class CaseQuery extends React.Component {
   
   constructor(props) {
       super(props)  
+      this.changeTab=this.changeTab.bind(this);
       this.state={
       	index:0
       }
@@ -63,19 +64,24 @@ export default class CaseQuery extends React.Component {
     );
   }
 
-  changeTab()
+  changeTab(para)
   {
-
+  	if (para==="map")
+  	{
+  		this.props.navigator.pushPage({component: MapPage});
+  	}
   }
   renderTabs() {
+        //content: <MapPage title='地圖清單' navigator={this.props.navigator} />,
+        // content:<div>map</div>,
     return [
       {
         content: <CaseList title='表格清單' navigator={this.props.navigator} />,
         tab: <Tab label='表格清單' icon='fa-table' changeTab={()=>this.changeTab.bind(this)} />
       },
       {
-        content: <MapPage title='地圖清單' navigator={this.props.navigator} />,
-        tab: <Tab label='地圖清單' icon='ion-earth' changeTab={this.changeTab.bind(this)} />
+      	content: <MapPage title='地圖清單'  />,
+        tab: <Tab label='地圖清單' icon='ion-earth' changeTab={()=>{this.changeTab("map");}} />
       }
     ]
   }

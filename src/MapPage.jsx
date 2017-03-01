@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Toolbar,ToolbarButton,Page, Button,Icon, BackButton,Tab,Tabbar,
 		List,ListItem,ListHeader,Modal,Switch,Input} from 'react-onsenui'
 
-import InfoPage from './InfoPage'
+import CaseDetail from './CaseDetail'
 
 
 const EIFFEL_TOWER_POSITION = {
@@ -70,16 +70,18 @@ export default class MapPage extends React.Component {
 
  	componentDidMount() {
  		
+ 		 
 		this.map = new google.maps.Map(this.refs.map, {
 		    center: EIFFEL_TOWER_POSITION,
 		    zoom: 16
 	    });
+		
 
 		this.infowindow = new google.maps.InfoWindow({});
 
 	    return;
 
- 		  var div = document.getElementById("map");
+ 		var div = document.getElementById("map");
  		  this.map = plugin.google.maps.Map.getMap(div);
  		  this.map.animateCamera({
 		    target: EIFFEL_TOWER_POSITION,
@@ -88,10 +90,10 @@ export default class MapPage extends React.Component {
 		    bearing: 140,
 		    duration: 5000
 		  });
- 		return;
+ 		  return;
  		
 
-	}
+		}
 
 	addMarker(){
 
@@ -111,7 +113,7 @@ export default class MapPage extends React.Component {
 			//ons.notification.alert('Hello world!');
 					debugger;
 
-		    _this.props.navigator.pushPage({component: InfoPage});
+		    _this.props.navigator.pushPage({component: CaseDetail});
 
 		});
 
@@ -157,7 +159,7 @@ export default class MapPage extends React.Component {
 		
 		markerOne.addListener('click',function(){
 			//ons.notification.alert('Hello world!');
-		    _this.props.navigator.pushPage({component: InfoPage});
+		    _this.props.navigator.pushPage({component: CaseDetail});
 
 		});
 
@@ -219,7 +221,7 @@ export default class MapPage extends React.Component {
 		            style={{}}
 		          >
 		            <section style={{marginLeft:'10px',marginRight:'30px'}}>
-		              <p style={{opacity: 0.8}}>
+		              <p style={{opacity: 0.6}}>
 		              </p>
 		              <p style={{backgroundColor:'#ccebff'}}>
 			              <ListHeader style={{fontSize:'20px',paddingBottom:'8px',lineHeight:'20px'}}>台北市</ListHeader>

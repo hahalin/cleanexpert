@@ -1,1 +1,100 @@
-<!DOCTYPE html> <html> <head> <meta charset=utf-8> <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"> <meta http-equiv=Content-Security-Policy content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' "> <meta http-equiv=Content-Security-Policy content="script-src 'self' https://maps.googleapis.com/ https://maps.gstatic.com/ https://mts0.googleapis.com/ https://mts1.googleapis.com/ 'unsafe-inline' 'unsafe-eval'"> <meta http-equiv=Content-Security-Policy content="script-src 'self' https://maps.googleapis.com/ https://maps.gstatic.com/ https://mts0.googleapis.com/ 'unsafe-inline' 'unsafe-eval'"> <script type=text/javascript src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyqQAaBkwHpHnmiuGr24R6_1ORGfJPNvk"></script> <script type=text/javascript src=cordova.js></script> <script type=text/javascript src=components/loader.js></script> <link rel=stylesheet type=text/css href=components/loader.css> <link rel=stylesheet type=text/css href=css/map.css> <link rel=stylesheet type=text/css href=css/font-awesome-4.7.0/css/font-awesome.min.css> <link href=app.css rel=stylesheet></head> <body> <div id=app></div> <script type=text/javascript src=vendor.bundle.js></script><script type=text/javascript src=app.bundle.js></script></body> </html>
+<!DOCTYPE html> <html> <head> <meta charset=utf-8> <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"> <meta http-equiv=Content-Security-Policy content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval' "> <meta http-equiv=Content-Security-Policy content="script-src 'self' https://maps.googleapis.com/ https://maps.gstatic.com/ https://mts0.googleapis.com/ https://mts1.googleapis.com/ 'unsafe-inline' 'unsafe-eval'"> <meta http-equiv=Content-Security-Policy content="script-src 'self' https://maps.googleapis.com/ https://maps.gstatic.com/ https://mts0.googleapis.com/ 'unsafe-inline' 'unsafe-eval'"> <script type=text/javascript src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyqQAaBkwHpHnmiuGr24R6_1ORGfJPNvk"></script> <script type=text/javascript src=cordova.js></script> <script type=text/javascript src=components/loader.js></script> <link rel=stylesheet type=text/css href=components/loader.css> <link rel=stylesheet type=text/css href=css/map.css> <link rel=stylesheet type=text/css href=css/button.css> <link rel=stylesheet type=text/css href=css/font-awesome-4.7.0/css/font-awesome.min.css> <link rel=stylesheet type=text/css href=http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css> <link href=app.css rel=stylesheet></head> <body> <style> .tagbutton {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: .5em 2em .55em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  -webkit-border-radius: .5em; 
+  -moz-border-radius: .5em;
+  border-radius: .5em;
+/*  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+*/
+  margin-left:3px;
+}
+.tagbutton:hover {
+  text-decoration: none;
+}
+.tagbutton:active {
+  position: relative;
+  top: 1px;
+}
+
+
+.bigbutton:active{
+  background-image: -webkit-linear-gradient(#efedec, #f7f4f4);
+  background-image: -o-linear-gradient(#efedec, #f7f4f4);
+  background-image: linear-gradient(#efedec, #f7f4f4);
+      box-shadow: 0 3px 5px 0 rgba(0,0,0,.4), inset 0px -3px 1px 1px rgba(204,198,197,.5);
+  color:blue;  
+  line-height:120px;
+  
+}
+.bigbutton {
+
+/*  background-color:rgba(0, 102, 255,0.6);
+  background-color:rgba(125,125,125,0.4);
+*/  
+  background-color:transparent;
+  background-color:rgba(255,255,255,0.7);
+  background-image: -o-linear-gradient(#f4f1ee, #fff);
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
+  
+  color:#333;
+
+  width: 120px;height: 120px;
+  width:40%;height:100%;
+  border-radius:20px;
+  margin:3%;
+
+  line-height:120px;
+  float:left;
+  text-align: center;
+  
+  font-size:24px;
+  
+} 
+
+.bigbutton:hover {
+  line-height:120px;
+
+  background-color:rgb(0,0,0,0.8);
+}
+
+
+.bigbutton1{
+  background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+  background-image: linear-gradient(top, #f4f1ee, #fff);
+  border-radius: 30%;
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
+  
+  float:left;
+  position: relative;
+
+  height: 90px;
+  width: 120px;     
+  line-height:90px;
+  
+  margin: 0 30px 30px 0;
+  
+  -webkit-transition: all .1s linear;
+
+  transition: all .1s linear;
+  text-decoration:none;
+  opacity:1;
+
+  text-align:center;
+  font-size:18px;
+  color:#333333;
+}
+
+.bigbuttona:hover{
+  background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
+  background-image: l*/inear-gradient(top, #fff, #f4f1ee);
+  color:#0088cc;
+  backround-color:rgb(0,0,0,0.3);
+} </style> <div id=app></div> <script src=https://use.fontawesome.com/8d0a228c0c.js></script> <script type=text/javascript src=vendor.bundle.js></script><script type=text/javascript src=app.bundle.js></script></body> </html>

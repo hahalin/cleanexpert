@@ -7,7 +7,7 @@ import {Toolbar,ToolbarButton,Splitter,SplitterSide,SplitterContent,
 import SecondPage from './SecondPage'
 import CaseQuery from './CaseQuery'
 import MapPage from './MapPage'
-
+import UserSettings from './UserSettings'
 
 export default class MainPage extends React.Component {
 
@@ -54,8 +54,10 @@ export default class MainPage extends React.Component {
   showPage(){
     if (this.state.page==='UserSettings')
     {
-      return (
-        <div>UserSettings</div>
+      //this.props.navigator.pushPage({component: UserSettings});
+      return(
+        <UserSettings>
+        </UserSettings>
       )
     }
     else if (this.state.page==='default')
@@ -123,12 +125,7 @@ export default class MainPage extends React.Component {
             onOpen={this.showa}
           >
             <Page>
-              <List
-                dataSource={['Profile', 'Followers', 'Settings']} 
-                renderRow={(title) => (
-                  <ListItem key={title} onClick={this.hide} tappable>{title}</ListItem>
-                )}
-              />
+              
               <List>
                 <ListItem key="Default" onClick={()=>
                   {
@@ -141,11 +138,12 @@ export default class MainPage extends React.Component {
                 </ListItem>
                 <ListItem key="UserSettings" onClick={()=>
                   {
-                    this.hide()
-                    this.setState({page:'UserSettings',title:'會員接案設定'})
+                    
+                    this.setState({page:'UserSettings',title:'會員接案設定',isOpen: false})
                     this.showPage()
+                    //this.hide()
                   }}>
-                  <Icon className="fa fa-gear" style={{marginRight:'5px'}}></Icon>
+                  <Icon className="ion-person" style={{marginRight:'5px'}}></Icon>
                   會員接案設定
                 </ListItem>
               </List>

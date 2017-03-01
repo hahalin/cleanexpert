@@ -46,7 +46,7 @@ class CaseList extends React.Component {
             style={{}}
           >
             <section style={{marginLeft:'10px',marginRight:'30px'}}>
-              <p style={{opacity: 0.8}}>
+              <p style={{opacity: 0.6}}>
               </p>
               <p style={{backgroundColor:'#ccebff'}}>
 	              <ListHeader style={{fontSize:'20px',paddingBottom:'8px',lineHeight:'20px'}}>台北市</ListHeader>
