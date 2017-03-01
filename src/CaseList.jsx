@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Toolbar,ToolbarButton,Page, Button,Icon, BackButton,Tab,Tabbar,
 		List,ListItem,ListHeader,Modal,Switch,Input} from 'react-onsenui'
-
+import CaseDetail from './CaseDetail'
 //var CaseList = React.createClass({
 class CaseList extends React.Component {
   
@@ -110,7 +110,7 @@ class CaseList extends React.Component {
     		<ListHeader style={{fontSize:'20px',marginBottom:'5px'}}>大安區</ListHeader>
 	    	<ListItem 
 	    		style={{backgroundColor:'#d9edf7'}} 
-	    		onClick={()=>{this.props.navigator.pushPage({component: SecondPage});}}
+	    		onClick={()=>{this.props.navigator.pushPage({component: CaseDetail});}}
 	    	>
 	      		<div class="left">
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
@@ -123,7 +123,9 @@ class CaseList extends React.Component {
 		        	帝寶新成屋裝潢清潔
 		      	</div>
 	    	</ListItem>
-	    	<ListItem style={{backgroundColor:'#d9edf7'}}>
+	    	<ListItem style={{backgroundColor:'#d9edf7'}}
+	    		onClick={()=>{this.props.navigator.pushPage({component: CaseDetail});}}
+	    		>
 	      		<div class="left">
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
@@ -135,7 +137,9 @@ class CaseList extends React.Component {
 		        	陽明山豪宅整棟清潔
 		      	</div>
 	    	</ListItem>
-	    	<ListItem style={{backgroundColor:'#d9edf7'}}>
+	    	<ListItem style={{backgroundColor:'#d9edf7'}}
+	    		onClick={()=>{this.props.navigator.pushPage({component: CaseDetail});}}
+	    	>
 	      		<div class="left">
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
@@ -149,7 +153,9 @@ class CaseList extends React.Component {
 	    	</ListItem>
 
 	    	<ListHeader style={{fontSize:'20px',marginBottom:'5px'}}>信義區</ListHeader>
-	    	<ListItem style={{backgroundColor:'#d9edf7'}}>
+	    	<ListItem style={{backgroundColor:'#d9edf7'}}
+	    		onClick={()=>{this.props.navigator.pushPage({component: CaseDetail});}}
+	    	>
 	      		<div class="left">
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
@@ -161,7 +167,9 @@ class CaseList extends React.Component {
 		        	帝寶新成屋裝潢清潔
 		      	</div>
 	    	</ListItem>
-	    	<ListItem style={{backgroundColor:'#d9edf7'}}>
+	    	<ListItem style={{backgroundColor:'#d9edf7'}}
+	    		onClick={()=>{this.props.navigator.pushPage({component: CaseDetail});}}
+	    	>
 	      		<div class="left">
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
@@ -173,7 +181,9 @@ class CaseList extends React.Component {
 		        	陽明山豪宅整棟清潔
 		      	</div>
 	    	</ListItem>
-	    	<ListItem style={{backgroundColor:'#d9edf7'}}>
+	    	<ListItem style={{backgroundColor:'#d9edf7'}}
+	    		onClick={()=>{this.props.navigator.pushPage({component: CaseDetail});}}
+	    	>
 	      		<div class="left">
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
@@ -187,7 +197,9 @@ class CaseList extends React.Component {
 	    	</ListItem>
 
 	    	<ListHeader style={{fontSize:'20px',marginBottom:'5px'}}>內湖區</ListHeader>
-	    	<ListItem style={{backgroundColor:'#d9edf7'}}>
+	    	<ListItem style={{backgroundColor:'#d9edf7'}}
+	    		onClick={()=>{this.props.navigator.pushPage({component: CaseDetail});}}
+	    	>
 	      		<div class="left">
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
@@ -199,7 +211,9 @@ class CaseList extends React.Component {
 		        	帝寶新成屋裝潢清潔
 		      	</div>
 	    	</ListItem>
-	    	<ListItem style={{backgroundColor:'#d9edf7'}}>
+	    	<ListItem style={{backgroundColor:'#d9edf7'}}
+	    		onClick={()=>{this.props.navigator.pushPage({component: CaseDetail});}}
+	    	>
 	      		<div class="left">
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
@@ -211,7 +225,9 @@ class CaseList extends React.Component {
 		        	陽明山豪宅整棟清潔
 		      	</div>
 	    	</ListItem>
-	    	<ListItem style={{backgroundColor:'#d9edf7'}}>
+	    	<ListItem style={{backgroundColor:'#d9edf7'}}
+	    		onClick={()=>{this.props.navigator.pushPage({component: CaseDetail});}}
+	    	>
 	      		<div class="left">
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
 		        	<Icon icon="fa-star" class="list__item__icon" style={{color:'#ffad33'}}></Icon>
