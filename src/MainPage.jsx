@@ -85,14 +85,14 @@ export default class MainPage extends React.Component {
               
               <Button className="bigbutton" icon='fa-map-marker'
                  
-                onClick={()=>{this.callMapPage();}}
+                onClick={()=>{this.hide();this.callMapPage();}}
               >
                 <Icon icon='fa-map-marker' />
                 查地圖
               </Button> 
               <Button className="bigbutton"  
               
-              onClick={this.pushPage.bind(this)}
+              onClick={()=>{this.hide();this.pushPage();}}
               >
               <Icon icon='fa-tasks' />
               找工作
