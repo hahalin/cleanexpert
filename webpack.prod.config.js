@@ -9,8 +9,8 @@ try {
   var CopyWebpackPlugin = require(path.join(cordovaNodeModules, 'copy-webpack-plugin'));
   var ProgressBarPlugin = require(path.join(cordovaNodeModules, 'progress-bar-webpack-plugin'));
 
-  var autoprefixer = require(path.join(cordovaNodeModules, 'autoprefixer'));
-  var precss = require(path.join(cordovaNodeModules, 'precss'));
+  var cssnext = require(path.join(cordovaNodeModules, 'postcss-cssnext'));
+  var postcssImport = require(path.join(cordovaNodeModules, 'postcss-import'));
 
 } catch (e) {
   throw new Error('Missing Webpack Build Dependencies. ');
@@ -28,6 +28,7 @@ module.exports = {
 
   entry: {
     app: './src/main',
+    'styles':'./src/style.js',
     vendor: ['react', 'react-dom', 'onsenui', 'react-onsenui']
   },
 
@@ -80,16 +81,19 @@ module.exports = {
       test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
       loader: 'file?name=assets/[name].[hash].[ext]'
     }, {
-      test: /\.styl$/,
-      loader: 'style!css!postcss!stylus'
+      test: /\.css$/,
+      include: [
+        path.join(__dirname, 'node_modules', 'onsenui', 'css-components-src', 'src'),
+        path.join(__dirname, 'src')
+      ],
+      loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1&-raw!postcss')
     }, {
       test: /\.css$/,
-      exclude: path.join(__dirname, 'src'),
+      exclude: [
+        path.join(__dirname, 'node_modules', 'onsenui', 'css-components-src', 'src'),
+        path.join(__dirname, 'src')
+      ],
       loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
-    }, {
-      test: /\.css$/,
-      include: path.join(__dirname, 'src'),
-      loader: 'raw!postcss'
     }, {
       test: /\.json$/,
       loader: 'json'
@@ -97,7 +101,12 @@ module.exports = {
   },
 
   postcss: function() {
-    return [precss, autoprefixer];
+    return [
+      postcssImport,
+      cssnext({
+        browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
+      })
+    ]
   },
 
   plugins: [
@@ -113,8 +122,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/public/index.html.ejs',
       chunksSortMode: 'dependency',
-      externalCSS: ['components/loader.css','css/map.css','css/button.css','css/font-awesome-4.7.0/css/font-awesome.min.css'],
-      externalJS: ['cordova.js','components/loader.js'],
+      externalCSS: ['components/loader.css'],
+      externalJS: ['components/loader.js'],
       minify: {
         caseSensitive: true,
         collapseWhitespace: true,
@@ -124,7 +133,7 @@ module.exports = {
       }
     }),
     new webpack.NoErrorsPlugin(),
-    new webpack.optimize.DedupePlugin(),
+    //new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new CopyWebpackPlugin([{
       from: path.join(__dirname, 'src', 'public'),

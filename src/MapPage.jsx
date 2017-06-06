@@ -20,7 +20,7 @@ export default class MapPage extends React.Component {
       	isModalOpen:false
       } 
       this.addMarker=this.addMarker.bind(this);
-  	}	
+  	}
 
 	renderToolbar() {
 	    return (
@@ -29,7 +29,8 @@ export default class MapPage extends React.Component {
 	        
 	        <div className='right'>
 			<ToolbarButton 
-				onClick={
+				onClick=
+				{
 					()=>this.setState({isModalOpen: true})
 				}
 			>
